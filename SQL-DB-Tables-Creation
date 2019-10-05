@@ -1,0 +1,266 @@
+USE [database01]
+GO
+/****** Object:  Table [dbo].[AVState]    Script Date: 10/5/2019 6:57:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AVState](
+	[ComputerName] [varchar](50) NULL,
+	[ComputerIP] [varchar](50) NULL,
+	[IsInstalled] [varchar](50) NULL,
+	[SEPVersion] [varchar](50) NULL,
+	[IsUpdated] [varchar](50) NULL,
+	[LastUpdated] [varchar](50) NULL,
+	[State] [varchar](50) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[DotNetVersions]    Script Date: 10/5/2019 6:57:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DotNetVersions](
+	[ComputerName] [varchar](50) NULL,
+	[ComputerIP] [varchar](50) NULL,
+	[NETFramework] [varchar](100) NULL,
+	[Product] [varchar](100) NULL,
+	[Version] [varchar](100) NULL,
+	[Release] [varchar](100) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[FileShares]    Script Date: 10/5/2019 6:57:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[FileShares](
+	[ComputerName] [varchar](50) NULL,
+	[ComputerIP] [varchar](50) NULL,
+	[ShareName] [varchar](100) NULL,
+	[SharePath] [varchar](200) NULL,
+	[ShareDesc] [varchar](200) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[FWState]    Script Date: 10/5/2019 6:57:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[FWState](
+	[ComputerName] [varchar](50) NULL,
+	[ComputerIP] [varchar](50) NULL,
+	[DomainProfile] [varchar](10) NULL,
+	[PrivateProfile] [varchar](10) NULL,
+	[PublicProfile] [varchar](10) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[InstalledUpdates]    Script Date: 10/5/2019 6:57:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[InstalledUpdates](
+	[ComputerIP] [varchar](50) NULL,
+	[ComputerName] [varchar](50) NULL,
+	[Description] [varchar](100) NULL,
+	[HotFixID] [varchar](100) NULL,
+	[InstalledBy] [varchar](100) NULL,
+	[InstalledOn] [varchar](100) NULL,
+	[KBArticle] [varchar](200) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[InternalUrls]    Script Date: 10/5/2019 6:57:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[InternalUrls](
+	[ServerIP] [varchar](100) NULL,
+	[Service] [varchar](100) NULL,
+	[VIP] [varchar](100) NULL,
+	[Port] [varchar](100) NULL,
+	[URL] [varchar](100) NULL,
+	[Availability] [varchar](100) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[IsInternetConnected]    Script Date: 10/5/2019 6:57:35 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[IsInternetConnected](
+	[ComputerName] [varchar](50) NULL,
+	[ComputerIP] [varchar](50) NULL,
+	[IsConnected] [varchar](10) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PendingReboot]    Script Date: 10/5/2019 6:57:35 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PendingReboot](
+	[ComputerName] [varchar](50) NULL,
+	[ComputerIP] [varchar](50) NULL,
+	[ComponentBasedServicing] [varchar](50) NULL,
+	[PendingComputerRenameDomainJoin] [varchar](50) NULL,
+	[WindowsUpdateAutoUpdate] [varchar](50) NULL,
+	[IsRebootPending] [varchar](50) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PRoject_State]    Script Date: 10/5/2019 6:57:35 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PRoject_State](
+	[Prj_Name] [nvarchar](300) NULL,
+	[Prj_StartDate] [nvarchar](50) NULL,
+	[Prj_PrcntCmplt] [nchar](10) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PublicURLS]    Script Date: 10/5/2019 6:57:35 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PublicURLS](
+	[URL] [varchar](100) NULL,
+	[Service] [varchar](100) NULL,
+	[PublicIP] [varchar](100) NULL,
+	[Port] [varchar](100) NULL,
+	[VIP] [varchar](100) NULL,
+	[ServerIP] [varchar](100) NULL,
+	[Availability] [varchar](100) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[requiredUpdates]    Script Date: 10/5/2019 6:57:35 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[requiredUpdates](
+	[ComputerIP] [varchar](50) NULL,
+	[ComputerName] [varchar](50) NULL,
+	[Title] [varchar](200) NULL,
+	[KBID] [varchar](50) NULL,
+	[IsBeta] [varchar](50) NULL,
+	[IsDownloaded] [varchar](50) NULL,
+	[RebootRequired] [varchar](50) NULL,
+	[KBarticle] [varchar](200) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ServerLogs]    Script Date: 10/5/2019 6:57:35 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ServerLogs](
+	[ComputerIP] [varchar](50) NULL,
+	[ComputerName] [varchar](50) NULL,
+	[LogCount] [varchar](10) NULL,
+	[LogID] [varchar](10) NULL,
+	[LogMSG] [text] NULL,
+	[LogType] [varchar](50) NULL,
+	[LogFirstLogged] [varchar](100) NULL,
+	[LogLastLogged] [varchar](100) NULL,
+	[LogName] [varchar](50) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Servers]    Script Date: 10/5/2019 6:57:35 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Servers](
+	[Asset_ID] [varchar](100) NULL,
+	[Name] [varchar](100) NULL,
+	[IPAddress] [varchar](100) NULL,
+	[Vlan] [varchar](100) NULL,
+	[OperatingSystem] [varchar](100) NULL,
+	[Owner] [varchar](100) NULL,
+	[Model] [varchar](100) NULL,
+	[Type] [varchar](100) NULL,
+	[Serial] [varchar](100) NULL,
+	[HyperVisor] [varchar](100) NULL,
+	[Rack] [varchar](100) NULL,
+	[Location] [varchar](100) NULL,
+	[OwnerUserName] [varchar](100) NULL,
+	[Domain] [varchar](100) NULL,
+	[S_Backup] [varchar](100) NULL,
+	[AfterRestartAction] [varchar](300) NULL,
+	[MaintenanceSchedule] [varchar](100) NULL,
+	[ProjectManager] [varchar](100) NULL,
+	[Projects] [varchar](100) NULL,
+	[Service] [varchar](100) NULL,
+	[S_Function] [varchar](100) NULL,
+	[ServerState] [varchar](5) NULL,
+	[PSsessionType] [varchar](50) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ServersDisks]    Script Date: 10/5/2019 6:57:35 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ServersDisks](
+	[ComputerName] [varchar](100) NULL,
+	[ComputerIP] [varchar](100) NULL,
+	[DeviceID] [varchar](100) NULL,
+	[VolumeName] [varchar](100) NULL,
+	[DiskSizeGB] [varchar](100) NULL,
+	[DiskFreeSpaceGB] [varchar](100) NULL,
+	[PercentFreeDiskSpace] [varchar](100) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ServersHWinfo]    Script Date: 10/5/2019 6:57:35 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ServersHWinfo](
+	[ComputerName] [varchar](200) NULL,
+	[ComputerIP] [varchar](200) NULL,
+	[OSName] [varchar](200) NULL,
+	[OSInstallDate] [varchar](200) NULL,
+	[OSServicePackMajorVersion] [varchar](200) NULL,
+	[OSArchitecture] [varchar](200) NULL,
+	[OSBuildNumber] [varchar](200) NULL,
+	[Manufacturer] [varchar](200) NULL,
+	[Model] [varchar](200) NULL,
+	[SerialNumber] [varchar](200) NULL,
+	[BiosName] [varchar](200) NULL,
+	[BiosVersion] [varchar](200) NULL,
+	[MemorySize] [varchar](200) NULL,
+	[CPUName] [varchar](200) NULL,
+	[TotalCPUCores] [varchar](200) NULL,
+	[PercentFreeMemory] [varchar](200) NULL,
+	[PercentCPUAvgLoad] [varchar](200) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[VlanLocations]    Script Date: 10/5/2019 6:57:35 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[VlanLocations](
+	[VlanLocation] [varchar](100) NULL,
+	[Realstart] [varchar](100) NULL,
+	[Realend] [varchar](100) NULL,
+	[Vlan] [varchar](100) NULL,
+	[GateWay] [varchar](100) NULL,
+	[Type] [varchar](100) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[WindowsRoles]    Script Date: 10/5/2019 6:57:35 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[WindowsRoles](
+	[ComputerName] [varchar](50) NULL,
+	[ComputerIP] [varchar](50) NULL,
+	[RoleName] [varchar](200) NULL
+) ON [PRIMARY]
+GO
