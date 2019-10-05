@@ -1833,7 +1833,7 @@ $pages += New-UDPage -Name 'home' -Content {
 					New-UDInputAction -RedirectUrl "/dynamic/$Name"
 					$OTP = Get-Otp $('"EncString"+2019') 4 60
 					#Enable SMS in Production.
-					#$SMS = Send-SMS  "$((Get-aduser -identity $Name -Properties extensionAttribute5).extensionAttribute5)" $('Your OTP is ' + $OTP)
+					#$SMS = Send-SMS  "$((Get-aduser -identity $Name -Properties mobile).mobile)" $('Your OTP is ' + $OTP)
 					$Session:a = $OTP
 				}
 				else
